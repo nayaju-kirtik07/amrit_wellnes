@@ -75,7 +75,7 @@ const Navbar = () => {
           <Button
             className="mobile-nav-button"
             fullWidth
-            onClick={() => navigate("/products")}
+            onClick={() => navigate("/services")}
           >
             Our Services
           </Button>
@@ -93,7 +93,7 @@ const Navbar = () => {
           <Button
             className="mobile-nav-button"
             fullWidth
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/book-now")}
           >
             Book Now
           </Button>
@@ -102,7 +102,7 @@ const Navbar = () => {
           <Button
             className="mobile-nav-button"
             fullWidth
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/gallery")}
           >
             Gallery
           </Button>
@@ -163,7 +163,7 @@ const Navbar = () => {
               </Button>
               <Button
                 className="nav-button"
-                // onClick={() => navigate("/contact")}
+                onClick={() => navigate("/book-now")}
               >
                 Book Now
               </Button>

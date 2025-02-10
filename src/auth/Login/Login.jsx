@@ -78,7 +78,6 @@ const Login = () => {
         email: formData.email,
         password: formData.password,
       });
-      console.log("res...", response?.data);
 
       if (response.data.success) {
         const {
