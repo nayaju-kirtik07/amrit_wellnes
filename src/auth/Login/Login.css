@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal overflow on container */
+    background: linear-gradient(rgba(14, 78, 100, 0.7), rgba(14, 78, 100, 0.7));
+}
+
+.login-content {
+    background: transparent;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+     box-sizing: border-box; /* Include padding and border in element's total width */
+
+}
+
+.login-title {
+    font-family: 'Playfair Display', serif !important;
+    color: #ffffff !important;
+    text-align: center;
+    margin-bottom: 8px !important;
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    word-wrap: break-word;
+}
+
+.login-subtitle {
+    font-family: 'Poppins', sans-serif !important;
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 20px !important;
+    font-size: 0.85rem !important;
+}
+
+.login-form {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-input-field {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 6px;
+}
+
+.login-input-field .MuiOutlinedInput-root {
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.login-input-field .MuiInputLabel-root {
+    font-size: 0.85rem;
+     color: #666666 !important;
+}
+.login-input-field .MuiOutlinedInput-notchedOutline{
+    border-color: #b3aea8 !important;
+}
+.login-input-field .MuiFormHelperText-root{
+    color: #ff6b6b !important;
+    font-size: 0.75rem !important;
+}
+
+
+.login-submit-button {
+    background-color: #5db4c7 !important;
+    color: #0e4e64 !important;
+    padding: 15px 20px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.1rem !important;
+    text-transform: none !important;
+    border-radius: 30px !important;
+    margin-top: 8px !important;
+    border: none !important;
+     transition: background-color 0.3s, transform 0.2s ease !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+        height: auto !important;
+}
+
+.login-submit-button:hover {
+   background-color: #5db4c7 !important;
+  color: #ffffff !important;
+      transform: translateY(-1px) !important;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 12px !important;
+}
+
+.forgot-password-button {
+    color: #e0e0e0 !important;
+    font-size: 0.8rem !important;
+     transition: background-color 0.3s, transform 0.2s ease !important;
+}
+
+.forgot-password-button:hover {
+    background-color: transparent !important;
+    text-decoration: underline !important;
+      transform: translateY(-1px) !important;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 16px !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #e0e0e0 !important;
+    font-size: 0.85rem !important;
+}
+
+.signup-button {
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif !important;
+    text-transform: none !important;
+    font-size: 0.85rem !important;
+    padding: 4px 8px !important;
+    height: 32px !important;
+    background-color: #5db4c7 !important;
+     transition: background-color 0.3s, transform 0.2s ease !important;
+    border-radius: 4px !important;
+    margin-left: 8px !important;
+}
+
+.signup-button:hover {
+   background-color: #5db4c7 !important;
+  color: #ffffff !important;
+      transform: translateY(-1px) !important;
+}
+
+.cta-button {
+    background-color: #5db4c7 !important;
+    color: #0e4e64 !important;
+    padding: 15px 20px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.1rem !important;
+    text-transform: uppercase !important;
+    border-radius: 30px !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    border: none !important;
+    transition: transform 0.2s ease, background-color 0.2s ease !important;
+    margin-top: 8px !important;
+    height: auto !important;
+     width: 100%; /* Make button take full width */
+   box-sizing: border-box;
+    font-weight: 400 !important;
+
+}
+
+.cta-button:hover {
+    background-color: #5db4c7 !important;
+  color: #ffffff !important;
+    transform: translateY(-1px) !important;
+}
+
+@media (max-width: 768px) {
+    .login-content {
+        width: 95%;
+          padding: 20px;
+    }
+      .login-title {
+        font-size: 1.9rem !important;
+    }
+       .login-subtitle {
+        font-size: 0.8rem !important;
+    }
+    .login-submit-button,
+    .cta-button {
+        font-size: 1rem !important;
+         padding: 12px 18px !important;
+    }
+    .signup-link{
+         font-size: 0.8rem !important;
+    }
+    .signup-button {
+        font-size: 0.8rem !important;
+    }
+    .login-input-field .MuiOutlinedInput-root {
+        font-size: 0.8rem;
+    }
+     .login-input-field .MuiInputLabel-root {
+        font-size: 0.8rem;
+    }
+     .error-message{
+        font-size: 0.75rem !important;
+          padding: 6px 10px !important;
+     }
+}
+@media (max-width: 480px) {
+    .login-content {
+        width: 96%;
+          padding: 15px;
+
+    }
+       .login-title {
+        font-size: 1.7rem !important;
+    }
+     .login-subtitle {
+        font-size: 0.7rem !important;
+    }
+
+    .login-submit-button,
+    .cta-button {
+        font-size: 0.95rem !important;
+       padding: 10px 15px !important;
+    }
+    .signup-link{
+        font-size: 0.7rem !important;
+    }
+    .signup-button{
+        font-size: 0.7rem !important;
+    }
+      .login-input-field .MuiOutlinedInput-root {
+        font-size: 0.75rem;
+    }
+     .login-input-field .MuiInputLabel-root {
+        font-size: 0.75rem;
+    }
+}

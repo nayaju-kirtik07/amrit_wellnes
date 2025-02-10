@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap");
+
+.signup-bg {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background: linear-gradient(rgba(14, 78, 100, 0.7), rgba(14, 78, 100, 0.7));
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-container {
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background: linear-gradient(rgba(14, 78, 100, 0.7), rgba(14, 78, 100, 0.7));
+  position: relative;
+  overflow: hidden;
+}
+
+
+.signup-content {
+  background: transparent;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Set a percentage width */
+  max-width: 500px;
+  position: relative;
+  box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.signup-title {
+  font-family: "Playfair Display", serif !important;
+  color: #ffffff !important;
+  text-align: center;
+  margin-bottom: 8px !important;
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  word-wrap: break-word; /* added word wrap for long title */
+}
+
+.signup-subtitle {
+  font-family: "Poppins", sans-serif !important;
+  color: #e0e0e0;
+  text-align: center;
+  margin-bottom: 20px !important;
+  font-size: 0.85rem !important;
+}
+
+.signup-form {
+  margin-top: 15px;
+}
+
+.input-field {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 6px !important;
+  margin-bottom: 10px !important;
+}
+
+.input-field .MuiOutlinedInput-root {
+  font-size: 0.85rem;
+}
+
+.input-field .MuiInputLabel-root {
+  font-size: 0.85rem;
+  color: #666666 !important;
+}
+
+.input-field .MuiOutlinedInput-notchedOutline {
+  border-color: #b3aea8 !important;
+}
+
+.input-field .MuiFormHelperText-root {
+  color: #ff6b6b !important;
+  font-size: 0.75rem !important;
+}
+
+.signup-button {
+  background-color: #5db4c7 !important;
+  color: #0e4e64 !important;
+  padding: 15px 20px !important; /* Adjusted padding for smaller screens */
+  font-family: "Poppins", sans-serif !important;
+  font-size: 1.1rem !important; /* Adjusted font size for smaller screens */
+  text-transform: none !important;
+  border-radius: 30px !important;
+  margin-top: 8px !important;
+  border: none !important;
+  transition: background-color 0.3s, transform 0.2s ease !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  height: auto !important;
+}
+
+.signup-button:hover {
+  background-color: #5db4c7 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 16px !important;
+  color: #e0e0e0 !important;
+  font-size: 0.85rem !important;
+}
+
+.login-button {
+  color: #ffffff !important;
+  font-size: 0.85rem !important;
+  padding: 4px 8px !important;
+  height: 32px !important;
+  background-color: #5db4c7 !important;
+  border-radius: 4px !important;
+  margin-left: 8px !important;
+  font-family: "Poppins", sans-serif !important;
+  transition: background-color 0.3s, transform 0.2s ease !important;
+}
+
+.login-button:hover {
+  background-color: #5db4c7 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+.error-message {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: #ff6b6b !important;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 15px !important;
+  font-size: 0.8rem !important;
+}
+
+.MuiGrid-root.MuiGrid-container {
+  gap: 10px !important;
+}
+
+.MuiGrid-item {
+  padding-top: 0 !important;
+}
+
+.name-fields-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.name-field {
+  flex: 1;
+}
+
+.MuiGrid-root.MuiGrid-container {
+  gap: 10px !important;
+  flex-direction: column;
+}
+
+.MuiGrid-item {
+  padding-top: 0 !important;
+  width: 100%;
+}
+
+.cta-button {
+  background-color: #5db4c7 !important;
+  color: #0e4e64 !important;
+  padding: 15px 20px !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 1.1rem !important;
+  text-transform: uppercase !important;
+  border-radius: 30px !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  border: none !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+  margin-top: 8px !important;
+  height: auto !important;
+  font-weight: 400 !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cta-button:hover {
+  background-color: #5db4c7 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Responsive adjustments using media query */
+@media (max-width: 480px) {
+    .signup-content {
+    width: 95%;
+    padding: 15px;
+
+  }
+   .signup-title {
+    font-size: 1.8rem !important;
+
+  }
+   .signup-subtitle {
+     font-size: 0.75rem !important;
+  }
+
+    .name-fields-container {
+        flex-direction: column;
+        gap: 0;
+    }
+     .signup-button, .cta-button {
+        font-size: 1rem !important;
+        padding: 12px 15px !important;
+
+    }
+    .login-link{
+        font-size: 0.75rem !important;
+    }
+       .login-button {
+    font-size: 0.75rem !important;
+   }
+}
