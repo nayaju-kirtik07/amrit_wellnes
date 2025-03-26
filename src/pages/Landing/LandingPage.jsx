@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import "./LandingPage.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import CustomSnackbar from "../../Components/CustomSnackbar/CustomSnackbar";
@@ -80,7 +80,7 @@ const LandingPage = () => {
           "Explore the latest in security technology that helps you protect your home or business effectively.",
         image:
           "https://ayurveda.com.np/wp-content/uploads/2024/05/Ayurvedic-Approaches-to-Managing-Diabetes-300x200.jpeg",
-        link: "https://ayurveda.com.np/blog/ayurvedic-approaches-to-manage-diabetes-herbs-diet-and-lifestyle/",
+        link: "/blog/manage-security", // Changed to internal link
       },
       {
         id: 2,
@@ -89,7 +89,7 @@ const LandingPage = () => {
           "Discover how easy it is to keep an eye on your premises with simple setups and our high-tech camera.",
         image:
           "https://ayurveda.com.np/wp-content/uploads/2024/04/Simple-and-Easy-Ayurveda-Weight-Loss-with-Panchakarma-300x200.jpeg",
-        link: "https://ayurveda.com.np/blog/simple-and-easy-ayurveda-weight-loss-with-panchakarma/",
+        link: "/blog/easy-home-security", // Changed to internal link
       },
       {
         id: 3,
@@ -98,7 +98,7 @@ const LandingPage = () => {
           "Explore modern techniqes to use our product and services for your personal security.",
         image:
           "https://ayurveda.com.np/wp-content/uploads/2024/04/Best-Ways-to-Reduce-Stress-with-Ayurvedic-Herbs-300x200.jpeg",
-        link: "https://ayurveda.com.np/blog/best-ways-to-reduce-stress-with-ayurvedic-herbs/",
+        link: "/blog/reduce-security", // Changed to internal link
       },
     ],
     buttonText: "Read all blogs",
@@ -190,21 +190,22 @@ const LandingPage = () => {
     <>
       <Navbar />
       <div className="landing-container">
-        <section
-          className="hero-section"
-          style={{
-            background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url("amritlogo.png") center/cover no-repeat`,
-          }}
+      <section className="hero-section">
+      <video autoPlay loop muted playsInline className="hero-video">
+        <source src="hero-fireworks.mp4" type="video/mp4" />  {/* Replace with your video path */}
+        Your browser does not support the video tag.
+      </video>
+
+      {/* <div className="hero-content">
+        <h1>Welcome to Amrit Wellness!</h1>
+        <button
+          className="inquiry-button"
+          onClick={() => navigate("/contact")}
         >
-          <h1>Welcome to Amrit Wellness!</h1>
-          <button
-            className="inquiry-button"
-            onClick={() => navigate("/contact")}
-          >
-            INQUIRY NOW
-          </button>
-        </section>
+          INQUIRY NOW
+        </button>
+      </div> */}
+    </section>
 
         <section className="intro-section">
           <button
@@ -274,7 +275,7 @@ const LandingPage = () => {
                             className="hm hm-arrow-right1"
                             aria-hidden="true"
                           ></i>
-                          <a href={post.link}></a>
+                          <Link to={post.link}></Link>
                         </div>
                         <div className="eael-entry-thumbnail ">
                           <img
@@ -293,21 +294,24 @@ const LandingPage = () => {
                       <div className="eael-entry-wrapper">
                         <header className="eael-entry-header">
                           <h2 className="eael-entry-title">
-                            <a
+                            <Link
                               className="eael-grid-post-link"
-                              href={post.link}
+                              to={post.link}
                               title={post.title}
                             >
                               {post.title}
-                            </a>
+                            </Link>
                           </h2>
                         </header>
                         <div className="eael-entry-content">
                           <div className="eael-grid-post-excerpt">
                             <p>{post.excerpt}</p>
-                            <button className="eael-post-elements-readmore-btn">
+                            <Link
+                              to={post.link}
+                              className="eael-post-elements-readmore-btn"
+                            >
                               Read Post
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -319,13 +323,13 @@ const LandingPage = () => {
             <div className="clearfix"></div>
           </div>
           <div className="eael-load-more-button-wrap eael-force-hide">
-            <a
+            <Link
               className="ha-creative-btn ha-stl--symbolab ha-eft--back-in-right"
-              href="https://ayurveda.com.np/blogs"
+              to="/blog"
             >
               {blogSection.buttonText}
               <i aria-hidden="true" className="hm hm-arrow-right1"></i>
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -389,10 +393,10 @@ const LandingPage = () => {
                   <h4>Quick Links</h4>
                   <ul>
                     <li>
-                      <a href="/">Home</a>
+                      <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <a href="/contact">Contact</a>
+                      <Link to="/contact">Contact</Link>
                     </li>
                   </ul>
                 </div>
@@ -442,8 +446,8 @@ const LandingPage = () => {
             <div className="footer-bottom">
               <p>© 2025 Amrit Wellness. All rights reserved.</p>
               <div className="footer-bottom-links">
-                <a href="/">Privacy Policy</a>
-                <a href="/">Terms of Service</a>
+                <Link to="/">Privacy Policy</Link>
+                <Link to="/">Terms of Service</Link>
               </div>
             </div>
           </div>

@@ -11,6 +11,8 @@ import {
   List,
   ListItem,
   Box,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -26,6 +28,21 @@ const Navbar = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const { toggleFilter } = useFilter();
+
+  // State for dropdown menu (desktop)
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  // State for mobile services dropdown
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
+  // Dynamic Services Data
+  const services = [
+    { name: "Service 1", route: "/service1" },
+    { name: "Service 2", route: "/service2" },
+    { name: "Service 3", route: "/service3" },
+    // Add more services here
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,12 +67,33 @@ const Navbar = () => {
     navigate("/login");
   };
 
+  // Desktop dropdown handlers
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleServiceClick = (serviceRoute) => {
+    navigate(serviceRoute);
+    handleMenuClose(); // Close the menu after navigation
+  };
+
+  // Mobile services dropdown handler
+  const handleMobileServicesToggle = () => {
+    setMobileServicesOpen(!mobileServicesOpen);
+  };
+
+  const handleMobileServiceClick = (serviceRoute) => {
+    navigate(serviceRoute);
+    setMobileOpen(false); // Close the drawer
+  };
+
   const drawer = (
     <div className="mobile-menu">
       <div className="drawer-header">
-        {/* <Typography variant="h6" className="drawer-title">
-          Drishti Surveillance
-        </Typography> */}
         <img src="amritlogo.png" alt="" height="60px" width="100px" />
         <IconButton onClick={handleDrawerToggle} className="drawer-close">
           <CloseIcon />
@@ -71,15 +109,33 @@ const Navbar = () => {
             Home
           </Button>
         </ListItem>
+
         <ListItem>
           <Button
             className="mobile-nav-button"
             fullWidth
-            onClick={() => navigate("/services")}
+            onClick={handleMobileServicesToggle}
           >
             Our Services
           </Button>
         </ListItem>
+
+        {mobileServicesOpen && (
+          <>
+            {services.map((service) => (
+              <ListItem key={service.name}>
+                <Button
+                  className="mobile-nav-button nested"
+                  fullWidth
+                  onClick={() => handleMobileServiceClick(service.route)}
+                >
+                  {service.name}
+                </Button>
+              </ListItem>
+            ))}
+          </>
+        )}
+
         <ListItem>
           <Button
             className="mobile-nav-button"
@@ -151,10 +207,31 @@ const Navbar = () => {
               </Button>
               <Button
                 className="nav-button"
-                // onClick={() => navigate("/products")}
+                aria-controls={open ? "services-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleMenuClick}
               >
                 Our Services
               </Button>
+              <Menu
+                id="services-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleMenuClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                {services.map((service) => (
+                  <MenuItem
+                    key={service.name}
+                    onClick={() => handleServiceClick(service.route)}
+                  >
+                    {service.name}
+                  </MenuItem>
+                ))}
+              </Menu>
               <Button
                 className="nav-button"
                 onClick={() => navigate("/contact")}
